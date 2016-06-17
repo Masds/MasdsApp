@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Principal.Principal;
 import Utilitarios.Persistence;
 
 /**
@@ -120,6 +121,12 @@ public class FLogin extends javax.swing.JFrame {
     private void bt_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_entrarActionPerformed
         Persistence conectadb = new Persistence();
         conectadb.conecta();
+        Principal princ = new Principal();
+        String user = txt_usuario.getText();
+        princ.setlbUser(user);
+        princ.show();
+        this.dispose();
+        conectadb.fechaConecxao();
     }//GEN-LAST:event_bt_entrarActionPerformed
 
     /**

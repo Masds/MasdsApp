@@ -28,7 +28,7 @@ public class Persistence {
     }
     
     public void conecta(){
-        setDados("127.0.0.1", 3306, "db_livraria", "root", "");
+        setDados("127.0.0.1", 3306, "db_masdsapp", "root", "");
         String driver = "org.gjt.mm.mysql.Driver";
         try{
         Class.forName(driver);
@@ -40,4 +40,11 @@ public class Persistence {
             JOptionPane.showMessageDialog(null, "Erro no Driver: "+ex);
         }
     }
+    
+    public void fechaConecxao(){
+        try{
+        conexao.close();
+        }catch (SQLException ex)
+        {JOptionPane.showMessageDialog(null, "Erro ao encerrar conexao: "+ex.getMessage());    }
+}
 }
